@@ -1,13 +1,19 @@
 
-# global variables
-board_1 = dict((index, [0 for x in range(3)]) for index in ['A', 'B', 'C'])
-board_2 = [[0 for x in range(3)] for x in range(3)]
-board_3 = dict((index, '') for index in [i+j for i in ['A', 'B', 'C'] for j in ['1', '2', '3']])
+import sys
 
 
-def generate_board(current_state):
+def initialize_board():
     """
-    function for board generation at any stage of the game
+    function to initialize the board
+    """
+    # dict((index, [0 for x in range(3)]) for index in ['A', 'B', 'C'])
+    # [[0 for x in range(3)] for x in range(3)]
+    return dict((index, '') for index in [i + j for i in ['A', 'B', 'C'] for j in ['1', '2', '3']])
+
+
+def print_board(current_state):
+    """
+    function to output tic-tac-toe board to console
     """
     print(current_state)
     pass
@@ -35,10 +41,8 @@ def main():
     """
     main function for running process
     """
-    print('Hello, world!')
-    generate_board(board_1)
-    generate_board(board_2)
-    generate_board(board_3)
+    board = initialize_board()
+    print_board(board)
 
 
 if __name__ == '__main__':
